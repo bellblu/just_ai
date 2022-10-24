@@ -1,0 +1,21 @@
+- name: Create prometheus.yml
+  template:
+    src: prometheus.yml.j2
+    dest: "{{  prometheus_path  }}/prometheus.yml"
+  become: true
+  notify: Reloaded prometheus
+
+- name: Create alertmanager.yml
+  template:
+    src: alertmanager.yml.j2
+    dest: "{{  alert_directory  }}/alertmanager.yml"
+  become: true
+  notify: 
+    - deamon reload
+    - Start alertmanager service
+
+- name: Copy rules.yml
+  copy:
+    src: rules.yml
+    dest: "{{  prometheus_path  }}/rules.yml"
+  become: true

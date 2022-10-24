@@ -1,0 +1,11 @@
+- name: Deploy services on server A
+  hosts: 
+    - server_a
+  roles:
+    - server_a
+
+- name: Deploy monitoring on server B
+  hosts: 
+    - server_b
+  roles:
+    - server_b

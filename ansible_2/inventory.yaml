@@ -1,0 +1,8 @@
+all:
+  children: 
+    server_a:
+      hosts:
+        178.154.227.235:
+    server_b:
+      hosts:
+        51.250.8.0:

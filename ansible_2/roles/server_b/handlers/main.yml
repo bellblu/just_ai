@@ -1,0 +1,25 @@
+- name: deamon reload
+  systemd:
+    daemon_reload: yes
+  become: true
+
+- name: Reloaded prometheus
+  service:
+    name: prometheus
+    state: reloaded
+    enabled: yes
+  become: true
+
+- name: Start grafana service
+  service:
+    name: grafana-server
+    state: started
+    enabled: yes
+  become: true
+
+- name: Start alertmanager service
+  service:
+    name: alertmanager
+    state: started
+    enabled: yes
+  become: true  

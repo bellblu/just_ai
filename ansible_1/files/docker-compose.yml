@@ -1,0 +1,8 @@
+version: "3"
+services:
+  java_app:
+    image: mrandrbel/justai:latest
+    restart: always
+    container_name: java_app
+    ports:
+      - 8080:8080

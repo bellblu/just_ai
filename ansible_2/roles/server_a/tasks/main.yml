@@ -1,0 +1,9 @@
+---
+# Setup docker adn docker-compose
+- include_tasks: setup_docker.yml
+
+#Build docker image
+- include_tasks: docker_build.yml
+
+#Deploy app and node exporter
+- include_tasks: deploy_app.yml

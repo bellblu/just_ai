@@ -1,0 +1,19 @@
+---
+- name: deploy java app
+  hosts: all
+  remote_user: test
+  tasks:
+    - import_tasks: tasks/setup_docker.yml
+    - import_tasks: tasks/deploy_app.yml
+  handlers:
+    - name: deamon reload
+      systemd:
+        daemon_reload: yes
+      become: true
+
+    - name: Start docker on boot
+      service:
+        name: docker
+        state: started
+        enable: yes
+      become: true

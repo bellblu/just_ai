@@ -1,0 +1,11 @@
+- name: deamon reload
+  systemd:
+    daemon_reload: yes
+  become: true
+
+- name: Start docker on boot
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  become: true

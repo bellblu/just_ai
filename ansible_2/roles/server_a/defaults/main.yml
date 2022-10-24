@@ -1,0 +1,4 @@
+git_folder: /project
+doc_comp_rep: /home/test
+git_repository: https://github.com/monodot/
+project: spring-boot-with-metrics

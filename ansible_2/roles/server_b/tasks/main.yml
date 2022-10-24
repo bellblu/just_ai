@@ -1,0 +1,12 @@
+---
+#Deploy prometheus, grafana
+- include_tasks: download_prom_graf.yml
+
+#Downlad and start alertmanager
+- include_tasks: download_alert.yml
+
+#Create system alertmanager file
+- include_tasks: create_system_alertmanager.yml
+
+#Setup 
+- include_tasks: setup_config.yml

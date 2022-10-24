@@ -1,0 +1,16 @@
+[Unit]
+Description=Alertmanager for prometheus
+After=network.target
+
+[Service]
+User=root
+ExecStart={{  alert_directory  }}/alertmanager \
+  --config.file={{  alert_directory  }}/alertmanager.yml \
+  --storage.path={{ alert_storage_directory }}
+ExecReload=/bin/kill -HUP $MAINPID
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

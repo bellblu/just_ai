@@ -1,0 +1,17 @@
+#cloud-config
+
+users:
+  - name: test
+    password: test
+    primary_group: root
+    groups: 
+      - root
+      - docker
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_import_id:
+      - lp:falcojr
+      - gh:TheRealFalcon
+    lock_passwd: true
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbY+H3aJsFTMy6wEaKhhghsrwQWZw6VLHac0DcmQ7Hebz+VPw1IcdS1W+jjjayJGqm8qnagoHG6wimnSylmRLkyjJ4hCjJI8BVJzbh0+6S3xBkMHMvzuu0HWJfpIebyVtilnicfgPDFgmEaieAWdgnTu/rJY6IQgO6o4KN+ROZbm9TNIdPp/VVVbRcKE4QrTssglHF43Yg+VACybjWqsqS1iYb6nz1TfVZ1qQZ/Kpt1B7HkFWggg3Fh4BqLktXF0MnVniltYMzn06W9yjEMN9OcHxK+W1d4d9toPYvoVIU77TyAnPD+ahzuaQr3e8Tv0RR1sQPHJ7UfIztcfuZvSz/Tn4PRKEr8Bwlxgh+EwDxZK+pJsOHutM4QKu4Ig41wvTDPUvtc8vaf75uc4eNwf7JsZ504KJN7ptchf6dhGe2yfQCu37Y8ags768XYF29zNGUv6irdapG6Afio0bV6J1YqQicxvUuhAaKP/cB6toCaUSKGiaL9N5vP0qU/D84WK0= andrbel@LAPTOP-IUF1DTVI

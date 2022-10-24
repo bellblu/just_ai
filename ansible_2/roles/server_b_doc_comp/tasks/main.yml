@@ -1,0 +1,6 @@
+---
+# Setup docker adn docker-compose
+- include_tasks: setup_docker.yml
+
+#Deploy prometheus, grafana, alertmanager
+- include_tasks: deploy_monitoring.yml

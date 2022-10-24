@@ -1,0 +1,11 @@
+- name: Create docker-compose
+  template:
+    src: docker-compose.yml.j2
+    dest: "{{  doc_comp_rep  }}/docker-compose.yml"
+
+
+- name: up docker-compose
+  command:
+    chdir: "{{  doc_comp_rep  }}"
+    cmd:  /usr/local/bin/docker-compose up -d
+  become: true

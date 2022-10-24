@@ -1,0 +1,8 @@
+- name: Create system alertmanager file
+  template:
+    src: alertmanager.service.j2
+    dest: /etc/systemd/system/alertmanager.service
+  notify:
+    - deamon reload
+    - Start alertmanager service
+  become: true

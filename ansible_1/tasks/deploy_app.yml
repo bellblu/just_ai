@@ -1,0 +1,19 @@
+- name: copy docker-compose
+  copy:
+    src: files/docker-compose.yml
+    dest: /home/test/docker-compose.yml
+    owner: test
+    group: docker
+  become: true
+
+- name: up docker-compose
+  command:
+    chdir: /home/test
+    cmd:  /usr/local/bin/docker-compose up -d
+  become: true
+
+# - name: up docker-compose
+#   docker_compose:
+#     project_src: /home/test/
+#     state: present
+#   become: true

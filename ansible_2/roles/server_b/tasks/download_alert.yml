@@ -1,0 +1,36 @@
+- name: Creates alertmanager directory
+  file:
+    path: "{{ alert_directory }}"
+    state: directory
+    mode: "0755"
+    recurse: yes
+  become: true
+
+- name: Download alertmanager
+  get_url:
+    url: https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-amd64.tar.gz
+    dest: "{{  path_workdir  }}/alertmanager.tar.gz"
+
+- name: Extract alertmanager
+  ansible.builtin.unarchive:
+    src: "{{  path_workdir  }}/alertmanager.tar.gz"
+    dest: "{{ path_workdir }}"
+    mode: "0755"
+    remote_src: yes
+  become: true
+
+- name: Copy alertmanager
+  copy:
+    src: "{{  path_workdir  }}/alertmanager-0.24.0.linux-amd64/"
+    dest: "{{  alert_directory  }}"
+    remote_src: yes
+    mode: "0755"
+  become: true
+
+- name: Creates alertmanager storage directory
+  file:
+    path: "{{ alert_storage_directory }}"
+    state: directory
+    mode: "0755"
+    recurse: yes
+  become: true

@@ -1,0 +1,4 @@
+path_config: /home/test
+doc_comp_rep: /home/test
+webhook_url: https://hooks.slack.com/services/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
+slck_channel: "#monitoring-alert"

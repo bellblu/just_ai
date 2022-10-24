@@ -1,0 +1,5 @@
+ansible_connection: ssh
+registry_name: mrandrbel
+item: justai
+server_a_ip: 178.154.227.235
+server_b_ip: 51.250.8.0
