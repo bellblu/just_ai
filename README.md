@@ -17,32 +17,32 @@ sudo cp node_exporter /usr/local/bin/node_exporter
 создал service файл для запуска node exporter
 sudo nano /etc/systemd/system/node_exporter.service
 
-[Unit]
-Description=Prometheus Node Exporter
-After=network.target
+    [Unit]
+    Description=Prometheus Node Exporter
+    After=network.target
 
-[Service]
-Type=simple
-User=root
-Group=root
+    [Service]
+    Type=simple
+    User=root
+    Group=root
 
-ExecStart=/usr/local/bin/node_exporter
-Restart=always
+    ExecStart=/usr/local/bin/node_exporter
+    Restart=always
 
-PrivateTmp=yes
-ProtectHome=yes
-NoNewPrivileges=yes
+    PrivateTmp=yes
+    ProtectHome=yes
+    NoNewPrivileges=yes
 
-ProtectSystem=strict
-ProtectControlGroups=true
-ProtectKernelModules=true
-ProtectKernelTunables=yes
-[Install]
-WantedBy=multi-user.target
+    ProtectSystem=strict
+    ProtectControlGroups=true
+    ProtectKernelModules=true
+    ProtectKernelTunables=yes
+    [Install]
+    WantedBy=multi-user.target
 
-    запустил сервис 
-         sudo  systemctl daemon-reload
-         sudo service node_exporter start
+запустил сервис 
+      sudo  systemctl daemon-reload
+      sudo service node_exporter start
 
 7. по ssh подключился на server B
     7.1 установка Prometheus 
@@ -105,8 +105,5 @@ scrape_configs:
     сервер конфигурации условий оповещения rules.yml.
  
  4. Сервера для проверки предоставляю после конфигурации с использованием ролей server_a и server_b
- Доступы:
-  Server A: test:test 178.154.227.235
-  Server B: test:test 51.250.8.0
-  Grafana: admin:12345qwert http://51.250.8.0:3000/d/ov0oEgdik/linux-hosts-metrics-base?orgId=1
+
 
