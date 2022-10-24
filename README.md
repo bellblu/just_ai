@@ -106,7 +106,7 @@ scrape_configs:
  
  4. Сервера для проверки предоставляю после конфигурации с использованием ролей server_a и server_b
  Доступы:
-  Server A: 
-  Server B:
-  Grafana: admin:12345qwert 
+  Server A: test:test 178.154.227.235
+  Server B: test:test 51.250.8.0
+  Grafana: admin:12345qwert http://51.250.8.0:3000/d/ov0oEgdik/linux-hosts-metrics-base?orgId=1
 
